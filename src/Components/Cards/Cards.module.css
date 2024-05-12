@@ -1,0 +1,50 @@
+table.tableCards {
+    border: 1px solid #FFFFFF;
+    width: 800px;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0 auto 20px auto;
+}
+table.tableCards td, table.tableCards th {
+    border: 1px solid #FFFFFF;
+    padding: 3px 2px;
+}
+table.tableCards tbody td {
+    font-size: 13px;
+}
+table.tableCards tr:nth-child(even) {
+    background: #D0E4F5;
+}
+table.tableCards thead {
+    background: #BFBBDC;
+}
+table.tableCards thead th {
+    font-size: 12px;
+    font-weight: normal;
+    color: #FFFFFF;
+    text-align: center;
+}
+table.tableCards thead th:first-child {
+    border-left: none;
+}
+
+table.tableCards tfoot td {
+    font-size: 14px;
+}
+
+tbody tr {
+    height: 45px;
+}
+
+tbody tr {
+    position: relative;
+}
+tbody tr td:last-child {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(0, 10px);
+    font-weight: bold;
+    cursor: pointer;
+}
+

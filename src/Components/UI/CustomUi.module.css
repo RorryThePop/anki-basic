@@ -1,0 +1,19 @@
+.inputForm {
+    margin: 10px 0;
+}
+
+.inputForm input {
+    padding: 10px;
+    width: 225px;
+    border: 1px solid #BFBBDC;
+    border-radius: 8px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 1px solid #BFBBDC;
+    border-radius: 8px;
+    background: none;
+    margin: 5px;
+    cursor: pointer;
+}
