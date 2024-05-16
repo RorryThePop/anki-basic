@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import logo from '../../assets/anki.svg'
 import cls from './Header.module.css'
 import {useDispatch, useSelector} from "react-redux";
-import Modal from "../Modal/Modal.jsx";
+import AddCardsModal from "../Modals/AddCardsModal.jsx";
 import {openModal} from "../../features/wordsSlice.js";
-import ModalCardData from "../Modal/ModalCardData.jsx";
+import AddWordModal from "../Modals/AddWordModal.jsx";
 const Header = () => {
     const isModalOpened = useSelector(state => state.words.isModalOpened)
     const dispatch = useDispatch()
@@ -17,9 +17,6 @@ const Header = () => {
                 <nav>
                     <ul>
                         <li>
-                            <a href={`/about`}>О проекте</a>
-                        </li>
-                        <li>
                             <a href={`/cards`}>Колоды</a>
                         </li>
                         <li onClick={() => dispatch(openModal())}>
@@ -28,7 +25,7 @@ const Header = () => {
                     </ul>
                 </nav>
             </header>
-            {isModalOpened && <ModalCardData/>}
+            {isModalOpened && <AddWordModal/>}
         </>
     );
 };

@@ -2,14 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     isModalOpened: false,
-    words: JSON.parse(localStorage.getItem('words')) || [
-        {
-            id: 1,
-            front: "Front word",
-            back: "Back word",
-            card: "Default" // Устанавливаем значение по умолчанию
-        },
-    ]
+    words: JSON.parse(localStorage.getItem('words')) || []
 }
 
 export const wordsSlice = createSlice({
@@ -22,7 +15,7 @@ export const wordsSlice = createSlice({
                 id: state.words.length + 1,
                 front: front,
                 back: back,
-                card: card // Добавляем информацию о колоде
+                card: card, // Добавляем информацию о колоде
             }
             state.words = [...state.words, newWord]
             localStorage.setItem('words', JSON.stringify(state.words))

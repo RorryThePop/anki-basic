@@ -4,7 +4,7 @@ import CustomInput from "../UI/CustomInput.jsx";
 import CustomButton from "../UI/CustomButton.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {createCard, openModal} from "../../features/cardSlice.js";
-const Modal = () => {
+const AddCardsModal = () => {
     const [cardValue, setCardValue] = useState('')
     const cards = useSelector((state) => state.card.cards);
     const dispatch = useDispatch()
@@ -29,4 +29,4 @@ const Modal = () => {
     );
 };
 
-export default Modal;
+export default AddCardsModal;

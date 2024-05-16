@@ -26,3 +26,9 @@
     color: black;
     cursor: pointer;
 }
+
+.Learn__answers h3:nth-child(2){
+    margin-bottom: 10px;
+    border-top: 1px solid #BFBBDC;
+    padding-bottom: 10px;
+}

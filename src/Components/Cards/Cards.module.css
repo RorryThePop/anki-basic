@@ -1,45 +1,43 @@
-table.tableCards {
+.tableCards {
     border: 1px solid #FFFFFF;
     width: 800px;
     text-align: center;
     border-collapse: collapse;
     margin: 0 auto 20px auto;
 }
-table.tableCards td, table.tableCards th {
-    border: 1px solid #FFFFFF;
+.tableCards td, table.tableCards th {
     padding: 3px 2px;
 }
-table.tableCards tbody td {
+.tableCards tbody td {
     font-size: 13px;
 }
-table.tableCards tr:nth-child(even) {
+.tableCards tr:nth-child(even) {
     background: #D0E4F5;
 }
-table.tableCards thead {
+.tableCards thead {
     background: #BFBBDC;
 }
-table.tableCards thead th {
+.tableCards thead th {
     font-size: 12px;
     font-weight: normal;
     color: #FFFFFF;
     text-align: center;
 }
-table.tableCards thead th:first-child {
+.tableCards thead th:first-child {
     border-left: none;
 }
 
-table.tableCards tfoot td {
+.tableCards tfoot td {
     font-size: 14px;
 }
 
-tbody tr {
+.tableCards tbody tr {
     height: 45px;
 }
-
-tbody tr {
+.tableCards tbody tr {
     position: relative;
 }
-tbody tr td:last-child {
+.tableCards tbody tr td:last-child {
     position: absolute;
     right: 0;
     top: 0;

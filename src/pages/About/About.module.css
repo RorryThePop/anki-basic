@@ -1,0 +1,22 @@
+.About {
+    padding: 50px 100px 0 100px;
+}
+
+.About__title {
+    margin-bottom: 20px;
+}
+
+.description__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.description__list div {
+    border: 1px solid #BFBBDC;
+    border-radius: 8px;
+    padding: 10px;
+    height: 100%;
+}

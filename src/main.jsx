@@ -15,22 +15,16 @@ import CardItem from "./pages/CardItem/CardItem.jsx";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App/>,
-        children: [
-            {
-                path: "about",
-                element: <About />,
-            },
-            {
-                path: "cards",
-                element: <Cards />,
-            },
-            {
-                path: 'cards/:cardsId',
-                element: <CardItem/>
-            }
-        ],
+        element: <About/>,
     },
+    {
+        path: "cards",
+        element: <Cards />,
+    },
+    {
+        path: 'cards/:cardsId',
+        element: <CardItem/>
+    }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

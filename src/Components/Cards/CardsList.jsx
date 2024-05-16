@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {removeCard} from "../../features/cardSlice.js";
 const CardsList = () => {
   const storedCard = JSON.parse(localStorage.getItem('card'))
+    const word = JSON.parse(localStorage.getItem('words'))
     const dispatch = useDispatch()
 
     const handleRemoveStoredItem = (cardId) => {
@@ -27,9 +28,9 @@ const CardsList = () => {
               <td>
                   <a href={`cards/${index + 1}`}>{item.cardName}</a>
               </td>
+              <td>{word && word.length}</td>
               <td>1</td>
-              <td>1</td>
-              <td>2</td>
+                <td>{word && word.length}</td>
                 <td onClick={( ) => handleRemoveStoredItem(item.id)}>X</td>
             </tr>
           ))}

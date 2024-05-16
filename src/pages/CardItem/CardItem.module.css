@@ -7,3 +7,15 @@
     font-weight: normal;
     margin: 10px;
 }
+
+.cardItem__table {
+    margin: 0 auto;
+    width: 500px;
+}
+
+.cardItem__table tbody tr td {
+    text-align: left;
+}
+
+
+

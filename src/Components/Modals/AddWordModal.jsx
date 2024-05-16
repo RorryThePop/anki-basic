@@ -4,7 +4,7 @@ import CustomInput from "../UI/CustomInput.jsx";
 import CustomButton from "../UI/CustomButton.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import {createWord, openModal} from "../../features/wordsSlice.js";
-const ModalCardData = () => {
+const AddWordModal = () => {
   const [frontValue, setFrontValue] = useState("");
   const [backValue, setBackValue] = useState("");
   const words = useSelector((state) => state.words.words);
@@ -22,6 +22,8 @@ const ModalCardData = () => {
 
     }
   };
+
+
 
   const handleCardSelect = (e) => {
     setSelectedCard(e.target.value); // Обновляем выбранную колоду при изменении значения в <select>
@@ -56,4 +58,4 @@ const ModalCardData = () => {
   );
 };
 
-export default ModalCardData;
+export default AddWordModal;

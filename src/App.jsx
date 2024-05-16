@@ -7,7 +7,9 @@ function App() {
     <>
       <Header/>
         <main className='main'>
-            <Outlet />
+            <section>
+                <h2>Туториал анки</h2>
+            </section>
         </main>
     </>
   )
