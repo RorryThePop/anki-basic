@@ -28,6 +28,8 @@ const CardItem = () => {
     setIsModalOpened(!isModalOpened)
   }
 
+
+
   console.log(filteredWords)
 
   return (
@@ -55,17 +57,6 @@ const CardItem = () => {
           {
             isModalOpened && <LearnWordsModal filteredWords={filteredWords} handleModal={handleModal}/>
           }
-          {/*<div className={cls.CardItem}>*/}
-          {/*  {filteredWords && filteredWords.map((item) => (*/}
-          {/*      <div key={item.id}>*/}
-          {/*        <div>*/}
-          {/*          <h3>{item.front}</h3>*/}
-          {/*          <CustomButton text='Перевернуть карточку' onHandleClick={() => toggleFlip(item.id)}/>*/}
-          {/*          {isFlipped[item.id] && <h3>{item.back}</h3>}*/}
-          {/*        </div>*/}
-          {/*      </div>*/}
-          {/*  ))}*/}
-          {/*</div>*/}
         </section>
       </main>
     </>
