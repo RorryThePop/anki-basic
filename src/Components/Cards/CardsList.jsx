@@ -11,6 +11,8 @@ const CardsList = () => {
         dispatch(removeCard(cardId))
         localStorage.setItem('card', JSON.stringify(storedCard.filter(item => item.id !== cardId)))
     }
+
+
   return (
     <table className={cls.tableCards}>
       <thead>

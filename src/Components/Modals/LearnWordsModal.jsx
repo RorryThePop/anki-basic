@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import cls from "./Modal.module.css";
 import CustomButton from "../UI/CustomButton.jsx";
 import {useDispatch} from "react-redux";
-import {removeWord, repeatWord} from "../../features/wordsSlice.js";
+import {learnWord, removeWord, repeatWord} from "../../features/wordsSlice.js";
 const LearnWordsModal = (props) => {
   const [isFlipped, setIsFlipped] = useState({});
   const [currentWord, setCurrentWord] = useState(0);
@@ -25,10 +25,18 @@ const LearnWordsModal = (props) => {
     localStorage.setItem('words', JSON.stringify(storedWords.filter(item => item.id !== wordId)))
   };
 
+  //функция для добавлчения и изменения состояния изученного и повторяемого.
   const hardToLearn = (wordId) => {
+    //показываем ответ
+    setShowOptions(!showOptions);
+    //вызываем с помощью диспатча функцию что ищет по wordId слово  с нужным айдишником и меняем ему состояние repeat с false на true
     dispatch(repeatWord(wordId))
+    //вызываем с помощью диспатча функцию что ищет по wordId слово  с нужным айдишником и меняем ему состояние learned с false на true
+    dispatch(learnWord(wordId))
+    setCurrentWord(currentWord + 1);
+    //обновляем состояние локального хранилища
+    localStorage.setItem('words', JSON.stringify(storedWords.filter(item => item.id !== wordId)))
   }
-
 
 
   return (
@@ -56,7 +64,7 @@ const LearnWordsModal = (props) => {
               <div>
                 <CustomButton
                   text="Сложно"
-                  onHandleClick={() => easyToLearnButton(filteredWords[currentWord].id)}
+                  onHandleClick={() => hardToLearn(filteredWords[currentWord].id)}
                 />
                 <CustomButton text="Легко" onHandleClick={() => easyToLearnButton(filteredWords[currentWord].id)} />
               </div>

@@ -28,9 +28,10 @@ const CardItem = () => {
     setIsModalOpened(!isModalOpened)
   }
 
+  // фильтруем массив по словам, что пользователь должен повторить и по словам что должен учить
+  const repeatedWords = filteredWords.filter(item => item.repeat)
+  const learnedWords = filteredWords.filter(item => item.learned)
 
-
-  console.log(filteredWords)
 
   return (
     <>
@@ -41,15 +42,15 @@ const CardItem = () => {
             <tbody>
             <tr>
               <td>Новые</td>
-              <td>{filteredWords.length}</td>
+              <td>{filteredWords.length - learnedWords.length}</td>
             </tr>
             <tr>
               <td>Изучаемые</td>
-              <td>{filteredWords.length}</td>
+              <td>{learnedWords.length}</td>
             </tr>
             <tr>
               <td>Повтояремые</td>
-              <td>0</td>
+              <td>{repeatedWords.length}</td>
             </tr>
             </tbody>
           </table>

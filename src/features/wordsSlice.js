@@ -16,12 +16,14 @@ export const wordsSlice = createSlice({
                 front: front,
                 back: back,
                 card: card, // Добавляем информацию о колоде
+                //Добавляем поля повтора и изучения слов
                 repeat: false,
                 learned: false
             }
             state.words = [...state.words, newWord]
             localStorage.setItem('words', JSON.stringify(state.words))
         },
+        //функционал поиска и изменения значения повторяемого слова с false на true
         repeatWord: (state, action) => {
             const word = state.words.find(item => item.id === action.payload);
             if (word) {
@@ -29,6 +31,7 @@ export const wordsSlice = createSlice({
             }
             localStorage.setItem('words', JSON.stringify(state.words))
         },
+        //функционал поиска и изменения значения изученного слова с false на true
         learnWord: (state, action) => {
             const word = state.words.find(item => item.id === action.payload);
             if (word) {
