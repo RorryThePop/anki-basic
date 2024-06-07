@@ -1,18 +1,22 @@
 import React from "react";
 import cls from "./Cards.module.css";
-import {useDispatch} from "react-redux";
-import {removeCard} from "../../features/cardSlice.js";
+import { useDispatch, useSelector } from "react-redux";
+import { removeCard } from "../../features/cardSlice.js";
 const CardsList = () => {
-  const storedCard = JSON.parse(localStorage.getItem('card'))
-    const word = JSON.parse(localStorage.getItem('words'))
-    const dispatch = useDispatch()
+  const storedCard = JSON.parse(localStorage.getItem("card"));
+  const word = JSON.parse(localStorage.getItem("words"));
+  const wordData = useSelector((state) => state.words.words);
+  const selectedCardName = useSelector((state) => state.card.cards);
+  const dispatch = useDispatch();
+  const handleRemoveStoredItem = (cardId) => {
+    dispatch(removeCard(cardId));
+    localStorage.setItem(
+      "card",
+      JSON.stringify(storedCard.filter((item) => item.id !== cardId)),
+    );
+  };
 
-    const handleRemoveStoredItem = (cardId) => {
-        dispatch(removeCard(cardId))
-        localStorage.setItem('card', JSON.stringify(storedCard.filter(item => item.id !== cardId)))
-    }
-
-
+console.log(wordData)
   return (
     <table className={cls.tableCards}>
       <thead>
@@ -24,16 +28,16 @@ const CardsList = () => {
         </tr>
       </thead>
       <tbody>
-        {storedCard &&
-            storedCard.map((item, index) => (
+        {selectedCardName &&
+            selectedCardName.map((item, index) => (
             <tr key={index}>
               <td>
-                  <a href={`cards/${index + 1}`}>{item.cardName}</a>
+                <a href={`cards/${index + 1}`}>{item.cardName}</a>
               </td>
               <td>{word && word.length}</td>
               <td>1</td>
-                <td>{word && word.length}</td>
-                <td onClick={( ) => handleRemoveStoredItem(item.id)}>X</td>
+              <td>{word && word.length}</td>
+              <td onClick={() => handleRemoveStoredItem(item.id)}>X</td>
             </tr>
           ))}
       </tbody>
