@@ -22,9 +22,6 @@ console.log(wordData)
       <thead>
         <tr>
           <th>Колоды</th>
-          <th>Новые</th>
-          <th>Изучаемые</th>
-          <th>К просмотру</th>
         </tr>
       </thead>
       <tbody>
@@ -34,9 +31,6 @@ console.log(wordData)
               <td>
                 <a href={`cards/${index + 1}`}>{item.cardName}</a>
               </td>
-              <td>{word && word.length}</td>
-              <td>1</td>
-              <td>{word && word.length}</td>
               <td onClick={() => handleRemoveStoredItem(item.id)}>X</td>
             </tr>
           ))}
